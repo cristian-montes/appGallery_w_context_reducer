@@ -5,7 +5,7 @@ import blogReducer from './blogReducer'
 const BlogProvider = props => {
 
     const initialState = {
-        blogPost:[],
+        blogPosts:[],
         currentBlogPost: null,
         loading: true
     }
@@ -20,13 +20,16 @@ const BlogProvider = props => {
             dispatch({type:'REQUEST_FINISHED'});
             dispatch({ type: 'SET_POSTS', payload: data})
         } catch (error) {
-            console.log(error)
+            console.log(error )
         }
-
-    }
+    };
 
     return(
-        <BlogContext.Provider value={{}}>
+        <BlogContext.Provider value={{
+            blogPosts: state.blogPosts,
+            currentBlogPost: state.currentBlogPost,
+            getPosts: getPosts
+        }}>
             {props.children}
         </BlogContext.Provider>
     )

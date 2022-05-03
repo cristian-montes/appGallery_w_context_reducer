@@ -5,7 +5,7 @@ function blogReducer(state, action){
         case 'SET_POST':
             return {
                 ...state,
-                blogPost:action.payload
+                blogPosts:action.payload
         };
         case 'SENDING_REQUEST':
             return{
@@ -23,3 +23,5 @@ function blogReducer(state, action){
 
     }
 }
+
+export default blogReducer;
