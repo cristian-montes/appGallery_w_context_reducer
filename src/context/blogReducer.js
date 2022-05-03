@@ -1,12 +1,11 @@
-import React from "react";
 
 function blogReducer(state, action){
     switch(action.type) {
-        case 'SET_POST':
+        case 'SET_POSTS':
             return {
                 ...state,
-                blogPosts:action.payload
-        };
+                blogPosts: action.payload
+            };
         case 'SENDING_REQUEST':
             return{
                 ...state,
@@ -19,7 +18,7 @@ function blogReducer(state, action){
             }
 
         default:
-            console.log('bad request')
+            return state
 
     }
 }
