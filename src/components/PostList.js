@@ -12,8 +12,30 @@ const PostList = () => {
     console.log('HERE',blogPosts);
 
     return(
-        <div>
-            <div>Post List</div>
+        <div className='posts'>
+            <div className='container'>
+                <h2>Posts</h2>
+                {
+                    !loading ? (
+                        <div>
+                            {
+                                blogPosts.map((post, i) =>{
+                                    return(
+                                        <PostCard
+                                            key={i}
+                                            title={post.title}
+                                            image={post.image}
+                                            author={post.author}
+                                            date={post.date}
+                                            id={post.id}
+                                        />
+                                    )
+                                })
+                            }
+                        </div>
+                    ) : (<div> loading... </div>)
+                }
+            </div>
         </div>
     )
 
