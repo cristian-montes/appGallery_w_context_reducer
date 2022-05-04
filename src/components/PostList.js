@@ -1,5 +1,6 @@
 import React, {useContext, useEffect} from 'react'
 import BlogContext from '../context/blogContext'
+import PostCard from './PostCard';
 
 const PostList = () => {
     const blogContext = useContext(BlogContext);
@@ -17,7 +18,7 @@ const PostList = () => {
                 <h2>Posts</h2>
                 {
                     !loading ? (
-                        <div>
+                        <div className='posts-grid-container'>
                             {
                                 blogPosts.map((post, i) =>{
                                     return(
