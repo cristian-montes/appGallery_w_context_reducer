@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import BlogProvider from './context/BlogProvider';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Home from './views/Home';
+import PostCard from './components/PostCard';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
 
           <Routes>
             <Route path ='/' exact element={<Home />} />
-          
+            {/* <Route path='/:postId' exact element={<Post />} /> */}
           </Routes>
 
         </Router>

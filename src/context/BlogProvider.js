@@ -24,6 +24,18 @@ const BlogProvider = props => {
         }
     };
 
+    const getPostById = async () => {
+        try {
+            dispatch({type: 'SENDING_REQUEST'});
+            const res = await fetch(`posts`);
+            const data = await res.json();
+            dispatch({type:'REQUEST_FINISHED'});
+            dispatch({ type: 'SET_POSTS', payload: data})
+        } catch (error) {
+            
+        }
+    }
+
     return(
         <BlogContext.Provider value={{
             blogPosts: state.blogPosts,
